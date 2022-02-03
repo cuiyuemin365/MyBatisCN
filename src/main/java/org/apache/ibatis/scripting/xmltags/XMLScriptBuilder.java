@@ -79,8 +79,10 @@ public class XMLScriptBuilder extends BaseBuilder {
     SqlSource sqlSource;
     // 根据节点树是否为动态，创建对应的SqlSource对象
     if (isDynamic) {
+        //含有动态sql节点（如if）或"${}"的语句
       sqlSource = new DynamicSqlSource(configuration, rootSqlNode);
     } else {
+        //非动态sql 可能含有 #{} ，但不含有动态sql节点（如if）或"${}"的语句
       sqlSource = new RawSqlSource(configuration, rootSqlNode, parameterType);
     }
     return sqlSource;

@@ -86,7 +86,7 @@ public class SqlSourceBuilder extends BaseBuilder {
     }
 
     /**
-     * 在这里，${}被替换为？
+     * 在这里，${}、#{} 被替换为？
      * 但同时，用户传入的实际参数也被记录了
      * @param content 包含
      * @return

@@ -86,6 +86,11 @@ public class TextSqlNode implements SqlNode {
       this.injectionFilter = injectionFilter;
     }
 
+      /**
+       * ${name}  ==> "小明"
+       * @param content
+       * @return
+       */
     @Override
     public String handleToken(String content) {
       // 拿到用户给出的实参
