@@ -29,21 +29,23 @@ import org.apache.ibatis.scripting.LanguageDriver;
 import org.apache.ibatis.session.Configuration;
 
 /**
- * @author Clinton Begin
- * 映射的语句
- *
- *
- * 该对象完整的表述出一个下面节点的信息
- *
- *      <insert id="addUser" parameterType="User">
- *         INSERT INTO `user`
- *         (`name`,`email`,`age`,`sex`,`schoolName`)
- *         VALUES
- *         (#{name},#{email},#{age},#{sex},#{schoolName})
- *     </insert>
- *
- *   但是这里面的
- */
+ * /**
+ *  *
+ *  * @author Clinton Begin
+ *  * 映射的语句
+ *  *
+ *  *
+ *  * 该对象完整的表述出一个下面节点的信息
+ *  *
+ *  *      <insert id="addUser" parameterType="User">
+ *  *         INSERT INTO `user`
+ *  *         (`name`,`email`,`age`,`sex`,`schoolName`)
+ *  *         VALUES
+ *  *         (#{name},#{email},#{age},#{sex},#{schoolName})
+ *  *     </insert>
+ *  *
+ *  *   但是这里面的
+ *  */
 public final class MappedStatement {
   // Mapper文件的磁盘路径
   private String resource;

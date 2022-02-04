@@ -27,6 +27,8 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.function.BiFunction;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.ibatis.binding.MapperRegistry;
 import org.apache.ibatis.builder.CacheRefResolver;
 import org.apache.ibatis.builder.IncompleteElementException;
@@ -110,7 +112,9 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
 
 public class Configuration {
 
-  // <environment>节点的信息
+    private static final Log log = LogFactory.getLog(Configuration.class);
+
+    // <environment>节点的信息
   protected Environment environment;
 
   // 以下为<settings>节点中的配置信息
@@ -865,6 +869,7 @@ public class Configuration {
         });
       }
     }
+    log.debug(JSONObject.toJSON(mappedStatements).toString());
   }
 
   private void parsePendingResultMaps() {
